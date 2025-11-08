@@ -1,0 +1,13 @@
+import random as rd 
+a=['r','p','s']
+comp=rd.choice(a)
+user=input(" enter r for rock \n enter p for paper \n enter s for scissors ")
+if user=='r' and comp=='s' or user=='p' and comp=='r' or user=='s' and comp=='p':
+  print("user win")
+elif user=='s' and comp=='r' or user=='r' and comp=='p' or user=='p' and comp=='s':
+  print("comp win")
+elif user==comp:
+  print("tie match")
+else:
+  print("invalid input")
+print(comp)
