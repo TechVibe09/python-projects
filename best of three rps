@@ -1,0 +1,26 @@
+import random as rd
+a=['r','p','s']
+u=0
+c=0
+for i in range(0,3):
+  comp=rd.choice(a)
+  user=input(" enter r for rock \n enter p for paper \n enter s for scissors ")
+  if user=='r' and comp=='s' or user=='p' and comp=='r' or user=='s' and comp=='p':
+    print("user win")
+    u+=1
+  elif user=='s' and comp=='r' or user=='r' and comp=='p' or user=='p' and comp=='s':
+    print("comp win")
+    c+=1
+  elif user==comp:
+    print("tie match")
+    u+=1
+    c+=1
+  else:
+    print("invalid input")
+  print(comp)
+if u>c:
+  print("user won")
+elif c>u:
+  print("comp won")
+else:
+  print("tie")
