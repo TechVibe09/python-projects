@@ -1,0 +1,32 @@
+import random as rd
+word=['apple','appam','banana','cricket','pine','coconut','wall','synonyms','tennis','you']
+hang=rd.choice(word)
+print(" WELCOME TO HANGMAN WORLD \n LET'S PLAY THE GAME \n YOU HAVE A TOTAL 6 LIVES")
+
+display=''
+for i in hang:
+  display+=' _ '
+print(display)
+j=6
+while j>=1:
+ p=input("Enter your word ")
+ if p in display:
+  print("You already guessed this word \n Enter another word")
+  continue
+ if p in hang:
+  print("correct guess")
+  for i in range(0,len(hang)):
+    if hang[i]==p:
+      display = display.split()
+      display[i]=p
+      display=' '.join(display)
+  print(display)
+ else: 
+  j-=1
+  print("incorrect guess!\n lives remaining",j)
+ if '_' not in display:
+   print("you won ")
+   break
+if '_' in display:
+  print("you lost, better luck next time")
+  print("the correct word is",hang)
